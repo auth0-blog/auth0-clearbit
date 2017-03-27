@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "http-server"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +15,8 @@
     "angular-lock": "^2.0.1",
     "auth0-js": "^8.4.0",
     "clearbit": "^1.2.3"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0"
   }
 }

@@ -9,7 +9,7 @@
 
   myApp.config(function config(lockProvider) {
     lockProvider.init({
-      clientID: 'LtiwyfY1Y2ANJerCNTIbT7vVsX5zKBS5',
+      clientID: 'ABWIUkxZtn9EMy1QmH55AELCuI6eqBy6',
       domain: 'bkrebs.auth0.com'
     });
   });
