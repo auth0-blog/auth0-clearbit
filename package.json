@@ -1,0 +1,18 @@
+{
+  "name": "auth0-clearbit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular-jwt": "^0.1.9",
+    "angular-lock": "^2.0.1",
+    "auth0-js": "^8.4.0",
+    "clearbit": "^1.2.3"
+  }
+}

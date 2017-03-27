@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Next Big Thing</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" ng-app="myApp">
+      <div class="row">
+        <div class="col-xs-12" ng-controller="homeController as homeCtrl">
+          <h1>Next Big Thing</h1>
+          <div class="jumbotron" ng-show="!homeCtrl.isLoggedIn()">
+            <p>Welcome to my great, actually amazing, application.</p>
+            <p><a href="" ng-click="homeCtrl.login()">Sign up now</a>, it is ultra fast.</p>
+          </div>
+          <div class="jumbotron" ng-show="homeCtrl.isLoggedIn()" ng-cloak>
+            <h2>Completing Your Data</h2>
+            <p ng-show="homeCtrl.user == null">
+              Sit back and relax while we fetch your data.
+              <img style="width: 18px;" src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" />
+            </p>
+            <p ng-show="homeCtrl.user != null">
+              Please, confirm your data below.
+            </p>
+
+            <div class="form-group">
+              <label>Full Name</label>
+              <input class="form-control" ng-model="homeCtrl.user.enrichment.name.fullName">
+            </div>
+            <div class="form-group">
+              <label>Full Name</label>
+              <input class="form-control" ng-model="homeCtrl.user.enrichment.location">
+            </div>
+            <div class="form-group">
+              <label>Company</label>
+              <input class="form-control" ng-model="homeCtrl.user.enrichment.employment.name">
+            </div>
+            <div class="form-group">
+              <label>Position</label>
+              <input class="form-control" ng-model="homeCtrl.user.enrichment.employment.title">
+            </div>
+            <div class="form-group">
+              <label>Biography</label>
+              <textarea class="form-control" ng-model="homeCtrl.user.enrichment.bio"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary pull-right disabled" ng-show="homeCtrl.user == null">
+              Loading your data...
+            </button>
+            <button type="submit" class="btn btn-primary pull-right" ng-show="homeCtrl.user != null">
+              Go Ahead
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.auth0.com/js/lock/10.13/lock.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="node_modules/auth0-js/build/auth0.js"></script>
+    <script src="node_modules/angular-lock/dist/angular-lock.js"></script>
+    <script src="node_modules/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
